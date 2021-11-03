@@ -8,10 +8,14 @@ namespace BikeRaceAPI.Interfaces
 {
     public interface IRaceLogic
     {
-        Task<List<RaceDto>> GetRaces();
-        Task<RaceDto> GetRace(Guid id);
-        Task CreateRace(RaceDto race);
-        Task EditRace(RaceDto race);
-        Task DeleteRace(Guid id);
+        Task<List<RaceDto>> GetRacesAsync();
+        Task<List<ParticipantDto>> GetAllParticipantsforRaceAsync(Guid raceId);
+        Task<List<TimeSpan>> GetRaceResultsAsync(Guid raceId);
+        Task<RaceDto> GetRaceAsync(Guid raceId);
+        Task AddParticipantToRaceAsync(Guid raceId, Guid participantId);
+        Task CreateRaceAsync(RaceDto race);
+        Task EditRaceAsync(RaceDto race);
+        Task DeleteRaceAsync(Guid raceId);
+        Task DeleteParticipantFromRaceAsync(Guid raceId, Guid participantId);
     }
 }

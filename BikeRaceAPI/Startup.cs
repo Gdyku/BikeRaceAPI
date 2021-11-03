@@ -15,6 +15,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using BikeRaceAPI.Mapper;
+using BikeRaceAPI.Interfaces;
+using BikeRaceAPI.Logic;
 
 namespace BikeRaceAPI
 {
@@ -45,6 +47,9 @@ namespace BikeRaceAPI
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
 
+            services.AddScoped<IParticipantLogic, ParticipantLogic>();
+            services.AddScoped<IRaceLogic, RaceLogic>();
+            services.AddScoped<IResultLogic, ResultLogic>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

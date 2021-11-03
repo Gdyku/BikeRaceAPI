@@ -8,10 +8,12 @@ namespace BikeRaceAPI.Interfaces
 {
     public interface IParticipantLogic
     {
-        Task<List<ParticipantDto>> GetParticipants();
-        Task<ParticipantDto> GetParticipant(Guid id);
-        Task CreateParticipant(ParticipantDto participant);
-        Task EditParticipant(ParticipantDto updatedParticipant);
-        Task DeleteParticipant(Guid id);
+        Task<List<ParticipantDto>> GetParticipantsAsync();
+        Task<ParticipantDto> GetParticipantAsync(Guid id);
+        Task CreateParticipantAsync(ParticipantDto participant);
+        Task EditParticipantAsync(ParticipantDto updatedParticipant);
+        Task EditParticipantResultAsync(Guid id, ResultDto result);
+        Task EditEntryFeeAsync(ParticipantDto participant);
+        Task DeleteParticipantAsync(Guid id);
     }
 }
